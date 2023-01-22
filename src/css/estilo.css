@@ -1,0 +1,144 @@
+body {
+    font-family: 'Poppins';
+}
+.cabecalho {
+    display: flex; /* Faz com que os elemento fiquem um ao lado do outro */
+    justify-content: space-between; /* Faz com que os elementos dividão o espaço entre eles e o coloque como intervalo de distancia */
+    max-width: 1440px;
+    padding: 30px;
+    margin: 0 auto; /* Centraliza o cabeçalho, informando zero no topo e em baixo e dividindo o valor das laterais e distribui centralizando o cabeçalho */
+}
+
+.cabecalho .logo {
+    border-radius: 20px;
+    width: 65px; /* Reduz o tamanho da imagem para 65px de largura */
+}
+
+.cabecalho .menu {
+    display: flex; /* Fez com que os elementos em lista ficassem lado a lado */
+    height: 100%; /* Faz com que o elemento ocupe a aréa total do elemento pai */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+.cabecalho nav li a {
+    font-weight: bold; /* Negrito */
+    color: white;
+    font-size: 25px;
+    padding: 10px 20px; /* Inseri um padding de 10px laterais e 20px fixo no topo e em baixo */
+    border-radius: 50px;
+    transition: 0.2s; /* Tempo de transição */
+}
+
+.cabecalho nav li a:hover {
+    background-color: #6523b6;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex; /* Coloca um filho ao lado do outro */
+    align-items: center;
+    height: calc(100vh - 132px);
+    padding: 0 30px 30px; /* O no topo, 30 nas laterais e 30 em baixo */
+}
+
+.container .imagem-titulo {
+    width: 500px;
+    
+}
+
+.container .descricao {
+    color: #f0f3ff;
+    width: 85%;
+    font-size: 18px;
+    margin: 30px 0;
+    text-align: justify;
+}
+
+.container .botao-trailer {
+    background-color: #e45b04;
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+}
+
+.container .botao-trailer:hover {
+    transform: scale(1.1);
+}
+
+.fundo-video {
+    position: absolute; /* Com esse comando o video foi para cima */
+    z-index: -1; /* Envia o video pra baixo com o eixo Z (profundidade) */
+    width: 100vw;/* Fez com que o  vídeo assumisse a largura de toda a tela */
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+}
+
+.fundo-video .video {
+    height: 100vh;
+    background-color: #e45b04;
+}
+
+.fundo-video::after {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,1) 100%);
+}
+
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: rgba(52,52, 50, 0.749);
+    opacity: 0; /* Esconde a Modal */
+    visibility: hidden; /* Esconde a Modal */
+}
+
+.modal .conteudo-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+.modal .fechar-modal {
+    background-color: #ffb22e;
+    color: #6523b6;
+    font-weight: bold;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    cursor:pointer;
+    border-radius: 10px;
+}
+
+.modal iframe {
+    border-width: 0;
+    width: 640px;
+    height: 360px;
+}
+
+.modal.aberto {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
